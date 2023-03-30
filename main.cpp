@@ -98,6 +98,7 @@ int main() {
   while (1) {
     std::cout<<'\n';
      std::cout << "Enter The Following \n";
+    std::cout<<"0.Exit The Program ";
   std::cout << "1.Addition\n";
   std::cout << "2.Subtraction\n";
   std::cout << "3.Multiplication\n";
@@ -144,7 +145,7 @@ int main() {
       cube();
       break;
     default:
-      std::cout << "Invalid input\n";
+      std::cout << "\nInvalid input\n";
       break;
     }
   }
