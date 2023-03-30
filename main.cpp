@@ -96,7 +96,7 @@ int main() {
   
 
   while (1) {
-    
+    std::cout<<'\n';
      std::cout << "Enter The Following \n";
   std::cout << "1.Addition\n";
   std::cout << "2.Subtraction\n";
