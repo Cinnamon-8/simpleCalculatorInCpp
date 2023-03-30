@@ -1,136 +1,154 @@
-#include<iostream>  
-#include<math.h>  
-using namespace std;
-void add();  
-void sub();  
-void multi();  
-void division();  
-void sqr();  
-void srt();  
-void exit();  
-int main()  
-{  
-system("clear");
-int opr;  
-// display different operation of the calculator  
-do  
-{  
-cout << "Select any operation from the C++ Calculator"  
-     "\n1 = Addition"  
-     "\n2 = Subtraction"  
-     "\n3 = Multiplication"  
-     "\n4 = Division"  
-     "\n5 = Square"  
-     "\n6 = Square Root"  
-     "\n7 = Exit"  
-     "\n \n Make a choice: ";  
-     cin >> opr;  
+
+#include <iostream>
+#include <math.h>
+#include <stdlib.h>
+#include <string>
+
+void add() {
+  int a, b;
+  system("clear");
+  std::cout << "Enter First Number\n";
+  std::cin >> a;
+  std::cout << "Enter Second Number\n";
+  std::cin >>b;
+  int c = a+b;
+  std::cout <<a <<" + "<< b <<" = "<<c<<"\n";
   
-   switch (opr)  
-     {  
-     case 1:  
-    add();   // call add() function to find the Addition  
-    break;  
-    case 2:  
-    sub();   // call sub() function to find the subtraction  
-    break;  
-    case 3:  
-    multi(); // call multi() function to find the multiplication  
-    break;  
-    case 4:  
-    division(); // call division() function to find the division  
-    break;  
-    case 5:  
-    sqr(); // call sqr() function to find the square of a number  
-    break;  
-    case 6:  
-    srt(); // call srt() function to find the Square Root of the given number  
-    break;  
-    case 7: 
-    cout << "Program Terminated";
-    exit(0);   // terminate the program  
-    break;  
-    default:  
-    cout <<"Something is wrong..!!";  
-    break;  
-    }  
-    cout <<" \n------------------------------\n";  
-    }while(opr != 7);  
-    cin.get();  
-    }  
+}
+void sub() {
+  int a, b;
+  system("clear");
+  std::cout << "Enter First Number\n";
+  std::cin >> a;
+  std::cout << "Enter Second Number\n";
+  std::cin >>b;
+  int c = a-b;
+  std::cout <<a <<" - "<< b <<" = "<<c<<"\n";
+}
+void mul() {
+  int a, b;
+  system("clear");
+  std::cout << "Enter First Number\n";
+  std::cin >> a;
+  std::cout << "Enter Second Number\n";
+  std::cin >>b;
+  int c = a*b;
+  std::cout <<a <<" * "<< b <<" = "<<c<<"\n";
+}
+void divi() {
+  int a, b;
+  system("clear");
+  std::cout << "Enter First Number\n";
+  std::cin >> a;
+  std::cout << "Enter Second Number\n";
+  std::cin >>b;
+  int c = a/b;
+  std::cout <<a <<" / "<< b <<" = "<<c<<"\n";
+}
+void mod() {
+  int a, b;
+  system("clear");
+  std::cout << "Enter First Number\n";
+  std::cin >> a;
+  std::cout << "Enter Second Number\n";
+  std::cin >>b;
+  int c = a%b;
+  std::cout <<a <<" % "<< b <<" = "<<c<<"\n";
+}
+void power() {
+  int a, b;
+  system("clear");
+  std::cout << "Enter The Base :\n";
+  std::cin >> a;
+  std::cout << "Enter The Power\n";
+  std::cin >>b;
+  double c = pow(a,b);
+  std::cout <<a <<" to the power "<< b <<" = "<<(int)c<<"\n";
+}
+void square() {
+  double a;
+  system("clear");
+  std::cout << "Enter Number You Want Square Of \n";
+  std::cin >> a;
+  double c = pow(a,2);
+  std::cout <<a <<" square = "<<(int)c<<"\n";
+}
+void squareroot() {
   
-void add()  
-{  
-system ("clear");
-  int num1, num2, z;  
-cout <<" \n Enter the First number = ";  
-cin >> num1;  
-cout << "\n Enter the Second number = ";  
-cin >> num2;  
-z = num1 + num2;  
-cout <<"\n Addition of the number = " << z;  
-}  
-void sub()  
-{  
-system("clear");
+   double a;
+  system("clear");
+  std::cout << "Enter Number You Want SquareRoot Of \n";
+  std::cin >> a;
+  double c = sqrt(a);
+  std::cout <<a <<" squareRoot is = "<<(int)c<<"\n";
+}
+void cube() {
+   double a;
+  system("clear");
+  std::cout << "Enter Number You Want Cube Of \n";
+  std::cin >> a;
+  double c = pow(a,3);
+  std::cout <<a <<" cube = "<<(int)c<<"\n";
+}
+int main() {
+  int input;
+  int i = 0;
+  
 
-int num1, num2, z;  
-cout <<" \n Enter the First number = ";  
-cin >> num1;  
-cout << "\n Enter the Second number = ";  
-cin >> num2;  
-z = num1 - num2;  
-cout <<"\n Subtraction of the number = " << z;  
-}  
-void multi()  
-{  
- system("clear");
+  while (1) {
+    
+     std::cout << "Enter The Following \n";
+  std::cout << "1.Addition\n";
+  std::cout << "2.Subtraction\n";
+  std::cout << "3.Multiplication\n";
+  std::cout << "4.Division\n";
+  std::cout << "5.Modulo \n";
+  std::cout << "6.Power\n";
+  std::cout << "7.Square\n";
+  std::cout << "8.Cube \n";
+  std::cout << "9.Square Root \n";
 
-int num1, num2, mul;  
-cout <<" \n Enter the First number = ";  
-cin >> num1;  
-cout << "\n Enter the Second number = ";  
-cin >> num2;  
-mul = num1 * num2;  
-cout <<"\n Multiplication of two numbers = " << mul;  
-}  
-void division()  
-{  
-system ("clear");
+    std::cout << "Enter the operator ==> ";
+    std::cin >> input;
+    if (input == 0) {
+      goto end;
+    }
 
-int num1, num2, div = 0;  
-cout <<" \n Enter the First number = ";  
-cin >> num1;  
-cout << "\n Enter the Second number = ";  
-cin >> num2;  
-while ( num2 == 0)  
-     {  
-     cout << "\n Divisor canot be zero"  
-         "\n Please enter the divisor once again: ";  
-         cin >> num2;  
-         }  
-div = num1 / num2;  
-cout <<"\n Division of two numbers = " << div;  
-}  
-void sqr()  
-{  
-system ("clear");
+    switch (input) {
+    case 1:
+      add();
+      break;
 
-int num1;  
-float sq;  
-cout <<" \n Enter a number to find the Square: ";  
-cin >> num1;  
-sq = num1 * num1;  
-cout <<" \n Square of " << num1<< " is : "<< sq;  
-}  
-void srt()  
-{ 
-system ("clear");
-
-float q;  
-int num1;  
-cout << "\n Enter the number to find the Square Root:";  
-cin >> num1;  
-q = sqrt(num1);  
-cout <<" \n Square Root of " << num1<< " is : "<< q;  
+    case 2:
+      sub();
+      break;
+    case 3:
+      mul();
+      break;
+    case 4:
+      divi();
+      break;
+    case 5:
+      mod();
+      break;
+    case 6:
+      power();
+      break;
+    case 9:
+      squareroot();
+      break;
+    case 7:
+      square();
+      break;
+    case 8:
+      cube();
+      break;
+    default:
+      std::cout << "Invalid input\n";
+      break;
+    }
+  }
+end:
+  std::cout << "Program Quitted\n";
+  return 0;
 }
